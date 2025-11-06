@@ -58,7 +58,7 @@ const About = () => {
               Será un placer ser parte de su próxima celebración y llevar el espíritu de México a su evento.
             </p>
 
-            <div className="text-center p-6 bg-gradient-to-r from-amber-900/20 to-yellow-900/20 rounded-lg border border-amber-400/30">
+            <div className="text-center p-6  from-amber-900/20 to-yellow-900/20 rounded-lg border border-amber-400/30">
               <h3 className="font-serif text-2xl text-amber-400 mb-2">Mariachi Noche Mexicana</h3>
               <p className="text-lg text-gray-300">
                 🎺✨ <em>"La música que enamora, emociona y celebra contigo"</em>

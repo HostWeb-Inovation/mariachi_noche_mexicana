@@ -1,0 +1,152 @@
+{
+  "1": {
+    "title": "Serenata Romántica",
+    "description": "Una serenata inolvidable bajo las estrellas con nuestro mariachi tradicional",
+    "category": "romantico",
+    "tags": ["serenata", "romántico", "noche"]
+  },
+  "2": {
+    "title": "Celebración Familiar",
+    "description": "Momentos especiales compartidos en familia con la música de mariachi",
+    "category": "familiar",
+    "tags": ["familia", "celebración", "tradición"]
+  },
+  "3": {
+    "title": "Boda Mexicana",
+    "description": "La tradición del mariachi en una ceremonia de bodas llena de alegría",
+    "category": "boda",
+    "tags": ["boda", "ceremonia", "tradición"]
+  },
+  "4": {
+    "title": "Cumpleaños Especial",
+    "description": "Festejando otro año de vida con las mañanitas y música tradicional",
+    "category": "celebracion",
+    "tags": ["cumpleaños", "mañanitas", "celebración"]
+  },
+  "5": {
+    "title": "Aniversario de Amor",
+    "description": "Celebrando el amor eterno con canciones románticas del mariachi",
+    "category": "romantico",
+    "tags": ["aniversario", "amor", "romántico"]
+  },
+  "6": {
+    "title": "Fiesta Empresarial",
+    "description": "Eventos corporativos con el toque especial del mariachi mexicano",
+    "category": "corporativo",
+    "tags": ["empresarial", "corporativo", "evento"]
+  },
+  "7": {
+    "title": "Quinceañera Real",
+    "description": "El día más importante para una princesa con mariachi de gala",
+    "category": "quinceanos",
+    "tags": ["quinceañera", "princesa", "gala"]
+  },
+  "8": {
+    "title": "Día de las Madres",
+    "description": "Homenajeando a mamá con las canciones más hermosas del repertorio",
+    "category": "familiar",
+    "tags": ["madres", "homenaje", "familia"]
+  },
+  "9": {
+    "title": "Graduación Triunfal",
+    "description": "Celebrando el logro académico con música llena de orgullo",
+    "category": "celebracion",
+    "tags": ["graduación", "logro", "orgullo"]
+  },
+  "10": {
+    "title": "Fiesta Patria",
+    "description": "Celebrando nuestras raíces mexicanas con todo el corazón",
+    "category": "patriotico",
+    "tags": ["patria", "mexicano", "tradición"]
+  },
+  "11": {
+    "title": "Sorpresa Romántica",
+    "description": "Momentos íntimos llenos de amor y música tradicional mexicana",
+    "category": "romantico",
+    "tags": ["sorpresa", "íntimo", "romántico"]
+  },
+  "12": {
+    "title": "Reunión de Amigos",
+    "description": "Compartiendo la amistad con la calidez del mariachi",
+    "category": "social",
+    "tags": ["amigos", "reunión", "amistad"]
+  },
+  "13": {
+    "title": "Bautizo Bendito",
+    "description": "Celebrando la llegada de un nuevo miembro a la familia",
+    "category": "religioso",
+    "tags": ["bautizo", "bendición", "familia"]
+  },
+  "14": {
+    "title": "Día del Padre",
+    "description": "Honrando a papá con las canciones que llegan al alma",
+    "category": "familiar",
+    "tags": ["padre", "homenaje", "familia"]
+  },
+  "15": {
+    "title": "Primera Comunión",
+    "description": "Un día sagrado acompañado de música celestial",
+    "category": "religioso",
+    "tags": ["comunión", "sagrado", "celestial"]
+  },
+  "16": {
+    "title": "Fiesta de Graduación",
+    "description": "El final de una etapa académica con gran celebración",
+    "category": "celebracion",
+    "tags": ["graduación", "académico", "fiesta"]
+  },
+  "17": {
+    "title": "Velada Romántica",
+    "description": "Una noche perfecta para el amor con serenata personalizada",
+    "category": "romantico",
+    "tags": ["velada", "romántico", "personalizada"]
+  },
+  "18": {
+    "title": "Celebración Navideña",
+    "description": "Las posadas y villancicos con el espíritu navideño mexicano",
+    "category": "navidad",
+    "tags": ["navidad", "posadas", "villancicos"]
+  },
+  "19": {
+    "title": "Fiesta de Año Nuevo",
+    "description": "Recibiendo el nuevo año con música y tradición",
+    "category": "celebracion",
+    "tags": ["año nuevo", "tradición", "fiesta"]
+  },
+  "20": {
+    "title": "Evento Cultural",
+    "description": "Preservando nuestras tradiciones en eventos culturales",
+    "category": "cultural",
+    "tags": ["cultural", "tradiciones", "evento"]
+  },
+  "21": {
+    "title": "Misa de Acción de Gracias",
+    "description": "Acompañando ceremonias religiosas con devoción musical",
+    "category": "religioso",
+    "tags": ["misa", "gracias", "devoción"]
+  },
+  "22": {
+    "title": "Inauguración Especial",
+    "description": "Dando el toque especial a inauguraciones y aperturas",
+    "category": "corporativo",
+    "tags": ["inauguración", "apertura", "especial"]
+  },
+  "23": {
+    "title": "Festival Comunitario",
+    "description": "Uniendo a la comunidad con la magia del mariachi",
+    "category": "cultural",
+    "tags": ["festival", "comunidad", "unión"]
+  },
+  "24": {
+    "title": "Despedida de Soltero",
+    "description": "La última noche de soltería con gran celebración mexicana",
+    "category": "celebracion",
+    "tags": ["despedida", "soltero", "celebración"]
+  },
+  "25": {
+    "title": "Concierto al Aire Libre",
+    "description": "Música bajo las estrellas en un escenario natural perfecto",
+    "category": "concierto",
+    "tags": ["concierto", "aire libre", "estrellas"]
+  }
+}
