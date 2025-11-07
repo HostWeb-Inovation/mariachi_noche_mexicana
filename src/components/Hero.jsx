@@ -21,7 +21,7 @@ const Hero = () => {
 
         <div className="mt-8">
           <a
-            href="#contact"
+            href="#contacto"
             className="inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-md px-6 py-3 shadow-lg transition-colors"
           >
             Contáctanos

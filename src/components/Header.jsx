@@ -40,7 +40,7 @@ const Header = () => {
           <button onClick={() => goTo('/sobre-nosotros', 'sobre-nosotros')} className="text-white text-sm hover:text-gray-300">Sobre Nosotros</button>
           <button onClick={() => goTo('/contacto', 'contacto')} className="text-white text-sm hover:text-gray-300">Contacto</button>
 
-          <a href="tel:+525611971440" className="ml-4 inline-flex items-center px-4 py-2 bg-amber-400 text-black rounded-lg font-semibold">Llámanos</a>
+          <a href="https://wa.me/525611971440" target="_blank" rel="noopener noreferrer" className="ml-4 inline-flex items-center px-4 py-2 bg-amber-400 text-black rounded-lg font-semibold hover:bg-amber-500 transition-colors">Llámanos</a>
         </nav>
 
         <div className="lg:hidden">
@@ -59,7 +59,7 @@ const Header = () => {
             <button onClick={() => goTo('/galeria', 'galeria')} className="text-white text-left">Galería</button>
             <button onClick={() => goTo('/contacto', 'contacto')} className="text-white text-left">Contacto</button>
 
-            <a href="tel:+525611971440" onClick={() => setIsMenuOpen(false)} className="mt-2 inline-flex items-center px-4 py-2 bg-amber-400 text-black rounded-lg">Llámanos</a>
+            <a href="https://wa.me/525611971440" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="mt-2 inline-flex items-center px-4 py-2 bg-amber-400 text-black rounded-lg hover:bg-amber-500 transition-colors">Llámanos</a>
           </div>
         </div>
       )}
