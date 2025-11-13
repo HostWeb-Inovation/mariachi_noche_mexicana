@@ -48,7 +48,7 @@ const Footer = () => {
                   <Instagram size={20} />
                 </a>
                 <a 
-                  href="https://www.youtube.com/@mouredev" 
+                  href="https://www.youtube.com/@MariachiNocheMexicana/videos" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 bg-gray-900 border border-gray-800 rounded-full text-gray-400 transition-all duration-300 hover:bg-amber-400 hover:text-black hover:border-amber-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-400/30" 
