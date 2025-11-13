@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+// Añade esto (copia NocheMexicana.png a src/assets/)
+import Logo from '../assets/NocheMexicana.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,15 +24,22 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-gray-800 bg-black px-4 sm:px-10 lg:px-20 py-3">
+    // altura fija en mobile/desktop y overflow-visible para permitir que el logo sobresalga
+    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-gray-800 bg-black px-4 sm:px-10 lg:px-20 py-2 h-[64px] md:h-[72px] overflow-visible">
       <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4 text-white">
-          <div className="w-7 h-7 flex items-center justify-center">
-            <svg className="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-              <path d="M12 3v10.15A4 4 0 1 0 14 17V7h4V3h-6z" />
-            </svg>
+          {/* Contenedor fijo (no altera el flujo). Imagen posicionada absolute para no afectar la altura del header */}
+          <div className="relative w-20 h-full flex items-center overflow-visible">
+            <img
+              src={Logo}
+              alt="Mariachi Noche Mexicana"
+              // logo más grande sin cambiar la altura del header; overflow-visible permite que sobresalga
+              className="absolute left-3 top-1/2 -translate-y-1/2 h-[120px] sm:h-[128px] md:h-[150px] lg:h-[170px] w-auto object-contain drop-shadow-2xl z-50"
+              draggable={false}
+            />
           </div>
-          <h2 className="text-white text-lg font-bold">Mariachi Noche Mexicana</h2>
+          {/* ocultar el texto en pantallas muy pequeñas para que el logo gane presencia */}
+          <h2 className="text-white text-lg font-bold hidden sm:block">Mariachi Noche Mexicana</h2>
         </div>
 
         <nav className="hidden lg:flex items-center gap-8">
