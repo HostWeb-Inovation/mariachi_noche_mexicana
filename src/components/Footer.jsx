@@ -30,22 +30,13 @@ const Footer = () => {
               </p>
               <div className="flex gap-4">
                 <a 
-                  href="https://www.facebook.com/profile.php?id=61581184793510" 
+                  href="https://www.facebook.com/profile.php?id=61557884265602" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 bg-gray-900 border border-gray-800 rounded-full text-gray-400 transition-all duration-300 hover:bg-amber-400 hover:text-black hover:border-amber-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-400/30" 
                   aria-label="Facebook"
                 >
                   <Facebook size={20} />
-                </a>
-                <a 
-                  href="https://www.instagram.com/codewebai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 bg-gray-900 border border-gray-800 rounded-full text-gray-400 transition-all duration-300 hover:bg-amber-400 hover:text-black hover:border-amber-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-400/30" 
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
                 </a>
                 <a 
                   href="https://www.youtube.com/@MariachiNocheMexicana/videos" 
@@ -100,7 +91,7 @@ const Footer = () => {
                 <Phone className="text-amber-400 w-5 h-5 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-amber-400 font-medium mb-1">Teléfono</p>
-                  <a href="tel:+525611971440" className="text-gray-400 transition-colors duration-300 hover:text-amber-400">+52 55 2706 0009</a>
+                  <a href="https://wa.me/5527060009" target="_blank" rel="noopener noreferrer" className="text-gray-400 transition-colors duration-300 hover:text-amber-400">+52 55 2706 0009</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">

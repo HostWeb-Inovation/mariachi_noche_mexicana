@@ -58,7 +58,7 @@ const Contact = () => {
   const prepareMessage = () => {
     const eventTypeNames = {
       'boda': 'Boda',
-      'quinceañera': 'Quinceañera',
+      'quinceañera': 'XV Años',
       'serenata': 'Serenata',
       'corporativo': 'Evento Corporativo',
       'familiar': 'Fiesta Familiar',
@@ -80,7 +80,7 @@ ${formData.message ? `\n💬 *Mensaje adicional:*\n${formData.message}` : ''}
   // Enviar por WhatsApp
   const sendWhatsApp = () => {
     const message = prepareMessage();
-    const whatsappURL = `https://wa.me/525611971440?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/5527060009?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
     setShowModal(false);
   };
@@ -262,7 +262,7 @@ ${formData.message ? `\n💬 *Mensaje adicional:*\n${formData.message}` : ''}
               <h3 className="text-amber-400 mb-4 font-serif text-xl">¿Evento de último momento?</h3>
               <p className="mb-6 text-gray-300">Llama directamente para eventos urgentes</p>
               <a
-                href="https://wa.me/525611971440"
+                href="https://wa.me/5527060009"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 border-2 border-amber-400 text-amber-400 rounded-full font-semibold hover:bg-amber-400 hover:text-black transition-colors cursor-pointer"
