@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * Video gallery that presents multiple videos (regular + shorts) using YouTube URLs.
@@ -53,17 +53,47 @@ const VideoCard = ({ item, playing, onPlay, index }) => {
   const id = extractYouTubeId(item.url);
   const thumb = id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : item.poster || '';
   const isPlaying = playing === id;
+  const isShort = item.type === 'short';
+  
+  const [isMobile, setIsMobile] = useState(false);
 
-  // responsive iframe embed
-  const iframeSrc = id
-    ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`
-    : '';
+  useEffect(() => {
+    const checkMobile = () => {
+      // Detectar móvil por touch y tamaño
+      const mobile = window.innerWidth < 768 || ('ontouchstart' in window);
+      setIsMobile(mobile);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Desktop: autoplay embed
+  const desktopParams = 'autoplay=1&rel=0&playsinline=1&controls=1&fs=1';
+  const iframeSrc = id ? `https://www.youtube.com/embed/${id}?${desktopParams}` : '';
+
+  const ratioClass = isShort ? 'pt-[177.78%]' : 'pt-[56.25%]';
+
+  const handlePlayClick = (e) => {
+    e.preventDefault();
+    
+    if (isMobile) {
+      // En móvil: abrir directamente en YouTube (app o navegador)
+      const youtubeUrl = isShort 
+        ? `https://youtube.com/shorts/${id}` 
+        : `https://www.youtube.com/watch?v=${id}`;
+      window.open(youtubeUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      // En desktop: reproducir inline
+      onPlay(id);
+    }
+  };
 
   return (
-    // ahora las tarjetas ocupan 1 columna (dos columnas en la grilla principal). Hice la miniatura más alta.
     <div className={`group relative overflow-hidden rounded-xl bg-black col-span-1 shadow-lg`}>
-      <div className="pt-[66.666%] relative"> {/* altura mayor para miniaturas más grandes */}
-        {!isPlaying && (
+      <div className={`${ratioClass} relative`}>
+        {/* Thumbnail siempre visible en móvil, en desktop solo si no está playing */}
+        {(isMobile || !isPlaying) && (
           <>
             <img
               src={thumb}
@@ -73,27 +103,32 @@ const VideoCard = ({ item, playing, onPlay, index }) => {
             />
             <button
               type="button"
-              onClick={() => onPlay(id)}
+              onClick={handlePlayClick}
               aria-label={`Reproducir ${item.title}`}
-              className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 focus:outline-none"
+              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 active:bg-black/50 focus:outline-none transition-colors z-10"
             >
-              <span className="flex items-center justify-center w-14 h-14 bg-amber-400 text-black rounded-full shadow-md">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M5 3v18l15-9L5 3z" />
+              <span className="flex items-center justify-center w-20 h-20 md:w-16 md:h-16 bg-red-600 text-white rounded-full shadow-2xl transition-transform active:scale-90 hover:bg-red-700">
+                <svg className="w-10 h-10 md:w-8 md:h-8 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
                 </svg>
               </span>
+              {isMobile && (
+                <span className="absolute bottom-4 bg-black/80 text-white text-xs px-3 py-1 rounded-full">
+                  Ver en YouTube
+                </span>
+              )}
             </button>
           </>
         )}
 
-        {isPlaying && (
+        {/* Iframe SOLO en desktop cuando está playing */}
+        {!isMobile && isPlaying && (
           <iframe
             title={item.title}
             src={iframeSrc}
-            allow="autoplay; encrypted-media; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="absolute inset-0 w-full h-full"
-            frameBorder="0"
+            className="absolute inset-0 w-full h-full border-0"
           />
         )}
       </div>
@@ -101,15 +136,20 @@ const VideoCard = ({ item, playing, onPlay, index }) => {
       <div className="p-4 bg-[#071023]">
         <h4 className="text-base md:text-lg font-semibold text-white truncate">{item.title}</h4>
         <div className="mt-2 flex items-center justify-between text-sm text-amber-200">
-          <span>{item.type === 'short' ? 'Short' : 'Video'}</span>
+          <span className="flex items-center gap-1">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            {isShort ? 'Short' : 'Video'}
+          </span>
           <a
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="underline hover:text-amber-300 active:text-amber-400 transition-colors"
             onClick={(e) => e.stopPropagation()}
           >
-            Abrir en YouTube
+            YouTube
           </a>
         </div>
       </div>
@@ -118,14 +158,12 @@ const VideoCard = ({ item, playing, onPlay, index }) => {
 };
 
 const VideoPlayer = ({ videos = defaultVideos, title = 'Nuestra Presentacion' }) => {
-  const [playing, setPlaying] = useState(null); // active youtube id
+  const [playing, setPlaying] = useState(null);
 
   const handlePlay = (id) => {
-    // toggle: si mismo click pausa (cierra iframe)
     setPlaying((prev) => (prev === id ? null : id));
   };
 
-  // split into main (first 6) and shorts (rest) but allow flexible list
   const mainVideos = videos.filter((v) => v.type !== 'short').slice(0, 7);
   const shorts = videos.filter((v) => v.type === 'short').slice(0, 4);
 
@@ -136,22 +174,22 @@ const VideoPlayer = ({ videos = defaultVideos, title = 'Nuestra Presentacion' })
           {title}
         </h3>
         <p className="text-center text-gray-400 mb-6 max-w-2xl mx-auto">
-          Selecciona un video para reproducir. Se abrirá el reproductor de YouTube inline.
+          {window.innerWidth < 768 
+            ? 'Toca un video para abrirlo en YouTube'
+            : 'Selecciona un video para reproducir inline'
+          }
         </p>
 
-        {/* Grid for main videos */}
-        {/* Dos columnas (más grandes): 1 en móvil, 2 en md+ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {mainVideos.map((v, i) => (
             <VideoCard key={i} item={v} playing={playing} onPlay={handlePlay} index={i} />
           ))}
         </div>
 
-        {/* Shorts row */}
         {shorts.length > 0 && (
           <>
             <h4 className="mt-6 mb-3 text-left text-amber-300 font-semibold">Shorts</h4>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {shorts.map((v, i) => (
                 <VideoCard key={`s-${i}`} item={v} playing={playing} onPlay={handlePlay} index={i} />
               ))}
@@ -160,7 +198,10 @@ const VideoPlayer = ({ videos = defaultVideos, title = 'Nuestra Presentacion' })
         )}
 
         <p className="mt-6 text-center text-gray-500 text-sm">
-          Si la reproducción automática está bloqueada por el navegador, pulsa el botón de reproducir en la miniatura.
+          {window.innerWidth < 768 
+            ? 'Los videos se abrirán en la app de YouTube para mejor experiencia'
+            : 'Los videos se reproducen directamente aquí'
+          }
         </p>
       </div>
     </div>

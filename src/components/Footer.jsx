@@ -88,7 +88,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="text-amber-400 w-5 h-5 mt-0.5 flex-shrink-0" />
+                <Phone className="text-amber-400 w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-amber-400 font-medium mb-1">Teléfonos</p>
                   <a href="https://wa.me/5527060009" target="_blank" rel="noopener noreferrer" className="text-gray-400 transition-colors duration-300 hover:text-amber-400">+52 55 2706 0009</a>
@@ -96,14 +96,14 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="text-amber-400 w-5 h-5 mt-0.5 flex-shrink-0" />
+                <Mail className="text-amber-400 w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-amber-400 font-medium mb-1">Email</p>
                   <a href="mailto:mariachinochemusical@gmail.com" className="text-gray-400 transition-colors duration-300 hover:text-amber-400">mariachinochemusical@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="text-amber-400 w-5 h-5 mt-0.5 flex-shrink-0" />
+                <MapPin className="text-amber-400 w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-amber-400 font-medium mb-1">Ubicación</p>
                   <p className="text-gray-400">Ecatepec, Edo. de México</p>
