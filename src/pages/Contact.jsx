@@ -233,8 +233,9 @@ ${formData.message ? `\n💬 *Mensaje adicional:*\n${formData.message}` : ''}
               <div className="flex items-start gap-4 p-6 bg-gray-900 rounded-xl border border-gray-800">
                 <div className="text-3xl">📞</div>
                 <div>
-                  <h3 className="font-serif text-xl text-amber-400 mb-2">Teléfono</h3>
+                  <h3 className="font-serif text-xl text-amber-400 mb-2">Teléfonos</h3>
                   <p className="text-gray-300 mb-1">+52 55 2706 0009</p>
+                  <p className="text-gray-300 mb-1">+52 56 1197 1440</p>
                   <p className="text-gray-400 text-sm">Disponible 24/7</p>
                 </div>
               </div>
