@@ -2,27 +2,48 @@ import React from 'react';
 import arturoImg from '../assets/miembros/Arturo.jpg';
 import javierImg from '../assets/miembros/Javier.jpg';
 import sebastianImg from '../assets/miembros/Sebastian.jpg';
+import albertoImg from '../assets/miembros/AlbertoMendoza.jpeg';
+import emmanuelImg from '../assets/miembros/EmmanuelOrtiz.jpeg';
+import erickImg from '../assets/miembros/ErickHernández.jpeg';
 
 const About = () => {
   // Array de integrantes del mariachi
   const members = [
     {
       id: 1,
+      name: 'Alberto Mendoza',
+      role: 'Voz - Guitarra',
+      image: albertoImg,
+    },
+    {
+      id: 2,
       name: 'Arturo Colula',
       role: 'Director Musical - Violín',
       image: arturoImg,
     },
     {
-      id: 2,
+      id: 3,
       name: 'Javier Colula',
       role: 'Trompeta',
       image: javierImg,
     },
     {
-      id: 3,
+      id: 4,
       name: 'Sebastián Hernández',
       role: 'Vihuela',
       image: sebastianImg,
+    },
+    {
+      id: 5,
+      name: 'Emmanuel Ortiz',
+      role: 'Trompeta',
+      image: emmanuelImg,
+    },
+    {
+      id: 6,
+      name: 'Erick Hernández',
+      role: 'Guitarrón',
+      image: erickImg,
     },
   ];
 
